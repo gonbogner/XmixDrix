@@ -1,18 +1,17 @@
 # board definition
-board_size=raw_input("Enter board size:")
+board_size=int(raw_input("Enter board size:"))
 
 board = [[1 for x in range(board_size)] for y in range(board_size)] 
 for row in range(board_size):
 	for col in range(board_size):
 		board[row][col]=raw_input('Enter a move:')
-print XmixDrix(board)		
 
 			
 #board function
 def rows(brd,player):
-	for x in range(board_size_row-1):
+	for x in range(board_size-1):
 		result = 1
-		for y in range(board_size_col-1):
+		for y in range(board_size-1):
 			if brd[x][y]!=player:
 				result = 0
 				break
@@ -48,4 +47,6 @@ def axis(brd,player):
 def XmixDrix(brd):
 	result=rows(brd,"x") or rows(brd,"o") or cols(brd,"x") or cols(brd,"o") or axis(brd,"x") or axis(brd,"o")	 		
 	return result					
-			
+		
+print XmixDrix(board)		
+
