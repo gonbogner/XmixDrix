@@ -2,9 +2,9 @@
 #board function
 def rows(brd,player):
 	board_size=len(brd)
-	for x in range(board_size-1):
+	for x in range(board_size):
 		result = 1
-		for y in range(board_size-1):
+		for y in range(board_size):
 			if brd[x][y]!=player:
 				result = 0
 				break
@@ -14,9 +14,9 @@ def rows(brd,player):
 
 def cols(brd,player):
 	board_size=len(brd)
-	for x in range(board_size-1):
+	for x in range(board_size):
 		result = 1
-		for y in range(board_size-1):
+		for y in range(board_size):
 			if brd[y][x]!=player:
 				result = 0
 				break
@@ -27,7 +27,7 @@ def axis(brd,player):
 	result_a=0
 	result_b=0
 	board_size=len(brd)
-	for x in range(board_size-1):
+	for x in range(board_size):
 		if brd[x][x]==player:
 			result_a+=1
 		if brd[x][board_size-1-x]==player:
