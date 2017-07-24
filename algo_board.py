@@ -1,7 +1,7 @@
-
 			
 #board function
 def rows(brd,player):
+	board_size=len(brd)
 	for x in range(board_size-1):
 		result = 1
 		for y in range(board_size-1):
@@ -13,6 +13,7 @@ def rows(brd,player):
 	return result
 
 def cols(brd,player):
+	board_size=len(brd)
 	for x in range(board_size-1):
 		result = 1
 		for y in range(board_size-1):
@@ -25,6 +26,7 @@ def cols(brd,player):
 def axis(brd,player):
 	result_a=0
 	result_b=0
+	board_size=len(brd)
 	for x in range(board_size-1):
 		if brd[x][x]==player:
 			result_a+=1
