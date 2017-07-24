@@ -14,6 +14,17 @@ def fill_yourself(brd,x,y,move):
 
 
 
+
+def print_xo(brd):
+	for prow in range(board_size):
+		s=""
+		for pcol in range(board_size):
+			s=s+"|"+str(brd[prow][pcol])+"|"
+		
+		print s
+		print "-----------"	
+
+
 import algo_board
 # board initialization
 board_size=int(raw_input("Enter board size:"))
@@ -25,7 +36,8 @@ for turns in range(1,board_size**2):
 	x=int(raw_input ("choose row for your move:"))
 	y=int(raw_input ("choose colom for your move:"))
 	move=raw_input('Enter a move:')
-	fill_yourself(board,x,y,move)	
+	fill_yourself(board,x,y,move)
+	print_xo(board)	
 	res=algo_board.XmixDrix(board)
 	if (res=="x"):
 		print "X is the winner"
