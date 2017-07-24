@@ -1,4 +1,4 @@
-			
+
 #board function
 def rows(brd,player):
 	board_size=len(brd)
@@ -40,8 +40,9 @@ def axis(brd,player):
 
 
 def XmixDrix(brd):
-	result=rows(brd,"x") or rows(brd,"o") or cols(brd,"x") or cols(brd,"o") or axis(brd,"x") or axis(brd,"o")	 		
-	if result==1:
-		return "we have a winner!"
+	if rows(brd,"x") or  cols(brd,"x") or axis(brd,"x"):
+		return 'x' 	 		
+	elif rows(brd,"o") or  cols(brd,"o") or axis(brd,"o"):
+		return 'o'
 	else:
-		"its a tie game"		
+		return "0"		
